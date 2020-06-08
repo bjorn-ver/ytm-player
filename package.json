@@ -1,0 +1,37 @@
+{
+	"name": "ytm-player",
+	"version": "1.0.0",
+	"description": "Small YouTube Music player",
+	"main": "main.js",
+	"scripts": {
+		"start": "electron .",
+		"dev": "cross-env NODE_ENV=development nodemon --exec electron .",
+		"build": "electron-builder -w ",
+		"cert-self": "electron-builder create-self-signed-cert -p BjornVermeulen"
+	},
+	"keywords": [
+		"youtube",
+		"music"
+	],
+	"author": "Bjorn Vermeulen",
+	"license": "ISC",
+	"dependencies": {},
+	"devDependencies": {
+		"cross-env": "^7.0.2",
+		"electron": "^9.0.2",
+		"electron-builder": "^22.7.0",
+		"nodemon": "^2.0.4"
+	},
+	"build": {
+		"appId": "nl.BjornVermeulen.${name}",
+		"copyright": "Copyright © 2020 ${author}",
+		"win": {
+			"target": "zip",
+			"icon": "./assets/icons/icon.ico",
+			"certificateFile": "private/BjornVermeulen.pfx",
+			"certificatePassword": "",
+			"verifyUpdateCodeSignature": "false",
+			"publisherName": "BjornVermeulen"
+		}
+	}
+}
